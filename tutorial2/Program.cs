@@ -10,9 +10,7 @@ namespace tutorial2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("elo");
-
-            Console.ReadLine();
+            TGame game = new TGame();
         }
     }
 }
