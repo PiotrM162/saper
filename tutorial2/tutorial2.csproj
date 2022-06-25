@@ -45,9 +45,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TChecker.cs" />
     <Compile Include="TDrawer.cs" />
     <Compile Include="TFields.cs" />
     <Compile Include="TGame.cs" />
+    <Compile Include="TGenerator.cs" />
     <Compile Include="TMainMenu.cs" />
   </ItemGroup>
   <ItemGroup>

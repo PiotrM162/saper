@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace tutorial2
 {
     internal class TMainMenu
     {
         public static bool lvlSelected = false;
+        public static int lvl = 0;
         public TMainMenu()
         {
             
@@ -17,8 +13,6 @@ namespace tutorial2
 
         public  void Selecting()
         {
-
-            int lvl = 0;
             TDrawer.MenuDraw(lvl);
             while (!lvlSelected)
             {
@@ -28,22 +22,23 @@ namespace tutorial2
                     switch (key.Key)
                     {
                         case ConsoleKey.UpArrow:
-                            if (lvl != 0)
+                            if (TMainMenu.lvl != 0)
                             {
-                                lvl--;
+                                TMainMenu.lvl--;
                                 TDrawer.MenuDraw(lvl);
                                 break;
                             }
                             break;
                         case ConsoleKey.DownArrow:
-                            if (lvl != 2)
+                            if (TMainMenu.lvl != 2)
                             {
-                                lvl++;
+                                TMainMenu.lvl++;
                                 TDrawer.MenuDraw(lvl);
                                 break;
                             }
                             break;
                         case ConsoleKey.Enter:
+                            Console.Clear();
                             lvlSelected = true;
                             break;
                     }
@@ -51,35 +46,5 @@ namespace tutorial2
 
             }
         }
-
-/*        public void MenuDraw(int lvl)
-        {
-            Console.Clear();
-            if (lvl == 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("easy");
-                Console.ForegroundColor = ConsoleColor.White;
-            }
-            else Console.WriteLine("easy");
-
-            if (lvl == 1)
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Medium");
-                Console.ForegroundColor = ConsoleColor.White;
-            }
-            else Console.WriteLine("Medium");
-
-            if (lvl == 2)
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Hard");
-                Console.ForegroundColor = ConsoleColor.White;
-            }
-            else Console.WriteLine("Hard");
-        }*/
-
-
     }
 }

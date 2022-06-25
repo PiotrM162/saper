@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace tutorial2
 {
@@ -35,6 +31,24 @@ namespace tutorial2
                 Console.ForegroundColor = ConsoleColor.White;
             }
             else Console.WriteLine("Hard");
+        }
+
+        public static void board(TFields[,] fields)
+        {
+            for (int i = 0; i < TGenerator.x; i++)
+            {
+                for (int j = 0; j < TGenerator.y; j++)
+                {
+                    if (fields[i, j].IsSelected)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Magenta;
+                        Console.Write(" " + fields[i, j].displayed + " ");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    }
+                    else Console.Write(" " + fields[i, j].displayed + " ");
+                }
+            Console.WriteLine();
+            }
         }
 
     }
