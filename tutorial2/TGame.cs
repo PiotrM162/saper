@@ -6,6 +6,8 @@ namespace tutorial2
     {
         public static bool IsMinesSet = false;
         public static bool IsRunning = true;
+        public static bool IsDefeted = false;
+        public static bool IsWin = false;
 
         public static int Positiony = 0;
         public static int Positionx = 0;
@@ -28,6 +30,16 @@ namespace tutorial2
                 if (TChecker.CheckWin(fields)) IsRunning = false;
 
             } while (IsRunning);
+
+
+            if (IsDefeted)
+            {
+                TDrawer.Defet();
+            }
+            else if (IsWin)
+            { 
+                TDrawer.Win();
+            }
         }
 
         public void movment()
@@ -78,12 +90,14 @@ namespace tutorial2
                         {
                             TGenerator.MinesSet(fields);
                             TChecker.Check(Positionx, Positiony);
+                            IsWin = true;
                         }
                         else
                         {
                             if (TChecker.IsDefeted(fields))
                             {
                                 IsRunning = false;
+                                IsDefeted = true;
                                 break;
                             }
                             else

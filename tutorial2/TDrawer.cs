@@ -51,5 +51,16 @@ namespace tutorial2
             }
         }
 
+        public static void Defet()
+        {
+            Console.Write("Przegrałeś");
+            Console.ReadLine();
+        }
+        public static void Win()
+        {
+            Console.Write("Wygrałeś");
+            Console.ReadLine();
+        }
+
     }
 }
